@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ECharts Treemap Visualization</title>
   <!-- Include ECharts library -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js"></script>
+</head>
+<body>
+  <!-- Container to render the chart -->
+  <div id="main" style="width: 100%; height: 600px;"></div>
+
   <script>
     // ECharts code with custom styling
     document.addEventListener('DOMContentLoaded', function () {
@@ -34,7 +40,7 @@
               label: {
                 show: true,
                 color: 'black',
-                fontSize: 30, // Emphasize name more (adjust as needed)
+                fontSize: 24, // Emphasize name more (adjust as needed)
                 fontWeight: 'bold',
                 position: 'inside',
                 padding: [10, 5, 5, 5] // Adjust padding for the label
