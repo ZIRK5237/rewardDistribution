@@ -19,87 +19,64 @@
       var option;
 
       option = {
-        series: [
-          {
-            type: 'treemap',
-            data: [
-              {
-                name: 'Public',
-                value: 1000000,
-                description: 'This is the Public category.'
-              },
-              {
-                name: 'Decentralized Exchange (DEX) Liquidity',
-                value: 600000,
-                description: 'This is the DEX Liquidity category.'
-              },
-              {
-                name: 'Core Team',
-                value: 150000,
-                description: 'This is the Core Team category.'
-              },
-              {
-                name: 'Private Investors',
-                value: 100000,
-                description: 'This is the Private Investors category.'
-              },
-              {
-                name: 'Rewards',
-                value: 750000,
-                description: 'This is the Rewards category.',
-                children: [
-                  {
-                    name: 'LP token staking',
-                    value: 400000,
-                    description: 'This is the Private Investors category.'
-                  },
-                  {
-                    name: 'OIT Staking',
-                    value: 200000,
-                    description: 'This is the Private Investors category.'
-                  },
-                  {
-                    name: 'Airdrops',
-                    value: 100000,
-                    description: 'This is the Private Investors category.'
-                  },
-                  {
-                    name: 'Bounties',
-                    value: 50000,
-                    description: 'This is the Private Investors category.'
-                  }
-                ]
-              }
-            ],
-            emphasis: {
-              focus: 'descendant',
-              itemStyle: {
-                borderWidth: 3,
-                borderColor: '#333'
-              },
-              label: {
-                show: true,
-                fontSize: 24, // Emphasize name more (adjust as needed)
-                fontWeight: 'bold',
-                position: 'inside',
-                padding: [10, 5, 5, 5] // Adjust padding for the label
-              }
-            },
-            label: {
-              show: true,
-              formatter: function (params) {
-                if (!params.children) {
-                  return params.name + '\n\n' + params.value;
-                }
-                return params.name;
-              },
-              fontSize: 14, // Make the value smaller (adjust as needed)
-              position: 'inside'
-            }
-          }
-        ]
-      };
-
+  tooltip: {
+    trigger: 'item'
+  },
+  series: [
+    {
+      name: 'Initial Token Distribution',
+      type: 'pie',
+      radius: ['35%', '70%'],
+      avoidLabelOverlap: false,
+      label: {
+        show: false,
+        position: 'center'
+      },
+      emphasis: {
+        label: {
+          show: true,
+          fontSize: 40,
+          fontWeight: 'bold',
+          color: 'white',
+          borderColor: 'black'
+        }
+      },
+      labelLine: {
+        show: false
+      },
+ data: [
+        {
+          value: 38.5,
+          name: 'PUBLIC SALE'
+        },
+        {
+          value: 23.1,
+          name: 'LIQUIDITY (LOCKED)'
+        },
+        {
+          value: 15.4,
+          name: 'LP REWARDS'
+        },
+        {
+          value: 7.7,
+          name: 'STAKING REWARDS'
+        },
+        {
+          value: 5.8,
+          name: 'BOUNTIES/REWARDS'
+        },
+        {
+          value: 5.8,
+          name: 'CORE TEAM (VESTED)'
+        },
+        {
+          value: 3.8,
+          name: 'PRIVATE INVESTORS'
+        }
+      ]
+    }
+  ]
+};
       option && myChart.setOption(option);
     });
   </script>
